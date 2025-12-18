@@ -1,0 +1,389 @@
+/* =========================
+   ROOT VARIABLES (BRAND)
+========================= */
+:root {
+    --green-dark: #0b6623;
+    --green-main: #118c3f;
+    --green-soft: #c9f4d3;
+    --yellow-main: #f8d90f;
+    --yellow-soft: #fff6b0;
+
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+
+    --card-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    --soft-shadow: 0 4px 18px rgba(0,0,0,0.08);
+
+    --transition-fast: 0.35s ease;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    background: var(--yellow-soft);
+    color: var(--text-dark);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--green-dark), var(--green-main));
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: var(--soft-shadow);
+    transition: background 0.3s ease;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--yellow-main);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.navbar a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: var(--transition-fast);
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: var(--yellow-main);
+    color: var(--green-dark);
+}
+
+/* Space for fixed navbar */
+.page-offset {
+    padding-top: 90px;
+}
+
+/* =========================
+   HERO / SLIDER CONTAINER
+========================= */
+.hero {
+    position: relative;
+    height: 360px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+/* =========================
+   HERO TEXT / H1 PRODUCTION FIX
+========================= */
+.hero h1 span {
+    display: block;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+.section h2 {
+    font-size: clamp(26px, 2.5vw, 32px);
+    color: var(--green-dark);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section p {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: clamp(15px, 1.3vw, 17px);
+}
+
+/* =========================
+   BUTTONS (GLOBAL)
+========================= */
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition-fast);
+    border: none;
+}
+
+.btn-primary {
+    background: var(--green-main);
+    color: white;
+    box-shadow: var(--soft-shadow);
+}
+
+.btn-primary:hover {
+    background: var(--yellow-main);
+    color: var(--green-dark);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--green-main);
+    color: var(--green-main);
+}
+
+.btn-outline:hover {
+    background: var(--green-main);
+    color: white;
+}
+
+/* =========================
+   CARDS (STATS, GALLERY, STAFF)
+========================= */
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* =========================
+   ROUND STATS CARDS
+========================= */
+.stat-card {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-fast);
+}
+
+.stat-card:hover {
+    transform: scale(1.08);
+}
+
+.stat-card .counter {
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 800;
+    color: var(--green-dark);
+}
+
+.stat-card p {
+    font-size: clamp(12px, 1.2vw, 14px);
+    text-align: center;
+    margin-top: 6px;
+}
+
+/* =========================
+   FORMS
+========================= */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: var(--transition-fast);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--green-main);
+    box-shadow: 0 0 0 3px var(--green-soft);
+}
+
+/* =========================
+   MODALS (PAYMENT)
+========================= */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background: var(--green-dark);
+    color: white;
+    width: 260px;
+    height: 260px;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    position: relative;
+    transform: scale(0.85);
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.modal-overlay.active .modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal h3 {
+    color: var(--yellow-main);
+    margin-bottom: 10px;
+}
+
+.modal .close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: var(--green-dark);
+    color: var(--text-light);
+    padding: 16px 10px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 80px;
+    box-shadow: 0 -4px 15px rgba(0,0,0,0.25);
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.footer .social-icons a {
+    width: 32px;
+    height: 32px;
+    background: var(--green-soft);
+    color: var(--green-dark);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    background: var(--yellow-main);
+    transform: translateY(-4px);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Hero slider fade animation */
+.hero-slide {
+    animation: fadeSlide 24s infinite;
+}
+
+.hero-slide:nth-child(2) { animation-delay: 6s; }
+.hero-slide:nth-child(3) { animation-delay: 12s; }
+.hero-slide:nth-child(4) { animation-delay: 18s; }
+
+@keyframes fadeSlide {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 14px 20px;
+    }
+
+    .navbar ul {
+        gap: 14px;
+    }
+
+    .hero {
+        height: 260px;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
+
+    .hero h1 span {
+        font-size: clamp(20px, 4vw, 28px);
+    }
+}
