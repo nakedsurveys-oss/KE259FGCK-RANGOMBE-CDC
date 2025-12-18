@@ -1,4 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://rangombecdc.vercel.app/sitemap.xml
+Sitemap: https://ke-259-fgck-rangombe-cdc.vercel.app/sitemap.xml
+
