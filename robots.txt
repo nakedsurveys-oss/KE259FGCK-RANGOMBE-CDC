@@ -1,5 +1,6 @@
 User-agent: *
-Disallow: /
+Allow: /
 
 Sitemap: https://ke-259-fgck-rangombe-cdc.vercel.app/sitemap.xml
+
 
